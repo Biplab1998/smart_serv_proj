@@ -11,7 +11,7 @@ function App() {
     var arr = [];
     for (var prop in data) {
         if (data.hasOwnProperty(prop)) {
-            var obj = {};
+            let obj = {};
             obj[prop] = data[prop];
             obj.popularity = data[prop][attr];
             arr.push(obj);
@@ -26,11 +26,11 @@ function App() {
 
     var result = [];
     for (var i=0, l=arr.length; i<l; i++) {
-        var obj = arr[i];
+        let obj = arr[i];
         delete obj.popularity;
-        for (var prop in obj) {
-            if (obj.hasOwnProperty(prop)) {
-                var id = prop;
+        for (var property in obj) {
+            if (obj.hasOwnProperty(property)) {
+                var id = property;
             }
         }
         var item = obj[id];
@@ -43,7 +43,7 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios
+        await axios
           .get("https://s3.amazonaws.com/open-to-cors/assignment.json")
           .then((res) => {
             sort_object_of_objects(res.data.products, 'popularity')
