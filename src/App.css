@@ -2,7 +2,6 @@
 
 body {
   background: #000000;
-  /* background-image: linear-gradient(to right, rgb(67, 67, 67) 0%, black 100%); */
   font-family: "Roboto Slab", serif;
 }
 .main-div {
@@ -42,5 +41,10 @@ body {
 .card-container h3 {
   letter-spacing: 0.1rem;
   line-height: 2rem;
+}
+
+.highlighter{
+  font-weight: 800;
+  color: #FF4C29;
 }
 
